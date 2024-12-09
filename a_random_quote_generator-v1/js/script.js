@@ -40,18 +40,21 @@ function getRandomQuote(){
 //Should print the random quote to the screen but currently doesn't, probably because the if statements are inside a string. Currently returns syntax error - unexpected token: identifier
 function printQuote() {
   const randomQuote = getRandomQuote();
-  const html = 
-  "<p class = "quote">randomQuote.quote</p>
-   <p class = "source">randomQuote.source
+  let html = 
+  `<p class = "quote">${randomQuote.quote}</p>
+   <p class = "source">${randomQuote.source}
    if (randomQuote.citation){
-    html+=<span class="citation">randomQuote.citation</span>
+   <span class="citation">${randomQuote.citation}</span>
    }
    if (randomQuote.year){
-    html+=<span class="year">randomQuote.year</span> </p>
-   }"
+  <span class="year">${randomQuote.year}</span>}
+    </p>`
+    document.getElementById('quote-box').innerHTML = html; 
+}
  
 
-document.getElementById('quote-box').innerHTML = html; 
+
+
 
 /***
  * click event listener for the print quote button
