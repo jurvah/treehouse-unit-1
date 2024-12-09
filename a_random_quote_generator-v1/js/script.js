@@ -42,12 +42,12 @@ function printQuote() {
   const randomQuote = getRandomQuote();
   let html = 
   `<p class = "quote">${randomQuote.quote}</p>
-   <p class = "source">${randomQuote.source}
+   <p class = "source">${randomQuote.source}`
    if (randomQuote.citation){
-   <span class="citation">${randomQuote.citation}</span>
+   html+=`<span class="citation">${randomQuote.citation}</span>`
    }
    if (randomQuote.year){
-  <span class="year">${randomQuote.year}</span>}
+  html+=`<span class="year">${randomQuote.year}</span>}
     </p>`
     document.getElementById('quote-box').innerHTML = html; 
 }
