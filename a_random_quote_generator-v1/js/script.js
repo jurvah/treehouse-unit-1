@@ -14,7 +14,8 @@ const quotes = [
   quote: "I knew exactly what to do; but in a much more real sense, I had no idea what to do.", 
   source: "Michael Scott",
   citation: "The Office",
-  year: 2009
+  year: 2009,
+  medium: "TV"
 },
 {
   quote: "Weeds are flowers, too, once you get to know them.",
@@ -37,8 +38,11 @@ function getRandomQuote(){
 }
 
 
-//Should print the random quote to the screen but currently doesn't, probably because the if statements are inside a string. Currently returns syntax error - unexpected token: identifier
+//Prints the random quote to the screen, including all properties present.
+
+ 
 function printQuote() {
+
   const randomQuote = getRandomQuote();
   let html = 
   `<p class = "quote">${randomQuote.quote}</p>
@@ -47,13 +51,31 @@ function printQuote() {
    html+=`<span class="citation">${randomQuote.citation}</span>`
    }
    if (randomQuote.year){
-  html+=`<span class="year">${randomQuote.year}</span>}
-    </p>`
-    document.getElementById('quote-box').innerHTML = html; 
-}
+  html+=`<span class="year">${randomQuote.year}</span>`
+   }
+   if (randomQuote.medium){
+    html+=`<span class="medium">${randomQuote.medium}</span></p>`
+     }
+   document.getElementById('quote-box').innerHTML = html;
+
+     }  
+    
+//Creates a random RGB color to apply to the quote container.
+function randomColor(){
+  const color = `rgb(${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)})`
+  return (color);
+  }
  
+ //Applies random color to quote container. 
+ 
+function applyColor(){
+  const color = randomColor();
+    let container = document.getElementsByClassName("container");
+    container.backgroundColor="color";
+    document.getElementById('container').innerHTML = container;
+}
 
-
+document.getElementById('load-quote').addEventListener("click", applyColor, false);
 
 
 /***
@@ -62,3 +84,5 @@ function printQuote() {
 ***/
 
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
+
+
