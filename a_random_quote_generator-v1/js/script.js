@@ -71,7 +71,7 @@ function randomColor(){
 function applyColor(){
   const color = randomColor();
     let container = document.getElementsByClassName("container");
-    container.backgroundColor="color";
+    document.container.style.backgroundColor="color";
     document.getElementById('container').innerHTML = container;
 }
 
