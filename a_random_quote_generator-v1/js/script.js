@@ -39,8 +39,6 @@ function getRandomQuote(){
 
 
 //Prints the random quote to the screen, including all properties present.
-
- 
 function printQuote() {
 
   const randomQuote = getRandomQuote();
@@ -59,6 +57,9 @@ function printQuote() {
    document.getElementById('quote-box').innerHTML = html;
 
      }  
+
+// Runs the printQuote function every 3 seconds.
+setInterval(printQuote,3000);
     
 //Creates a random RGB color to apply to the quote container.
 function randomColor(){
@@ -70,9 +71,7 @@ function randomColor(){
  
 function applyColor(){
   const color = randomColor();
-    let container = document.getElementsByClassName("container");
-    document.container.style.backgroundColor="color";
-    document.getElementById('container').innerHTML = container;
+    document.body.style.backgroundColor=color;
 }
 
 document.getElementById('load-quote').addEventListener("click", applyColor, false);
